@@ -11,7 +11,10 @@ const displayUser = user => {
 document.getElementById('name').innerHTML = user.results[0].name.title+ ' '+ user.results[0].name.first+ ' ' +user.results[0].name.last;
 // document.getElementById('name').innerHTML = user.results[0].name.last;
 document.getElementById('gender').innerHTML = user.results[0].gender;
-document.getElementById('photo').innerHTML = user.results[0].picture.thumbnail;
+document.getElementById('photo').innerHTML =  `
+
+<img src = "${user.results[0].picture.thumbnail}">
+`;
 }
 
 

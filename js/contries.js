@@ -1,10 +1,22 @@
 // console.log('countriessss')
 
-const countryData = () => {
-        fetch('https://restcountries.com/v3.1/all')
-        .then(res => res.json())
-        .then(data => countryDisplay(data))
+// const countryData = () => {
+//         fetch('https://restcountries.com/v3.1/all')
+//         .then(res => res.json())
+//         .then(data => countryDisplay(data))
+// }
+
+const countryData2 = async () => {
+        const res = await fetch('https://restcountries.com/v3.1/all')
+       try{
+        const data = await res.json()
+        countryDisplay(data);
+       }catch(error){
+        console.log(error)
+       }
 }
+
+
 const countryDisplay = countries => {
         const countryContainer = document.getElementById('all-countries')
         // console.log(countries[0].name)
@@ -40,4 +52,4 @@ const showCountryName = country => {
     <img src = "${country.flags.png}"> 
     `
 }
-countryData()
+countryData2()
